@@ -1,0 +1,681 @@
+/* --- DTX REMODEL - GLOBAL STYLESHEET --- */
+
+/* --- 1. IMPORTS & VARIABLES --- */
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@400;500;700;900&display=swap');
+
+:root {
+    --dtx-red: #c00a31;
+    --dtx-blue: #002768;
+    --white: #ffffff;
+    --dark-grey: #212529;
+    --light-grey-bg: #f8f9fa;
+    --font-main: 'Red Hat Display', sans-serif;
+    --transition-speed: 0.3s;
+}
+
+/* --- 2. GLOBAL RESETS & BASE STYLES --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+}
+
+body {
+    font-family: var(--font-main);
+    color: var(--dark-grey);
+    background-color: var(--white);
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: var(--dtx-red);
+    transition: color var(--transition-speed) ease;
+}
+
+a:hover {
+    color: var(--dtx-blue);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-main);
+    color: var(--dtx-blue);
+    font-weight: 900;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+}
+
+h1 { font-size: 3.5rem; }
+h2 { font-size: 2.5rem; }
+h3 { font-size: 1.75rem; }
+
+p {
+    margin-bottom: 1rem;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+section {
+    padding: 80px 0;
+}
+
+/* --- 3. UTILITY CLASSES --- */
+.btn {
+    display: inline-block;
+    padding: 12px 28px;
+    font-family: var(--font-main);
+    font-weight: 700;
+    font-size: 1rem;
+    text-transform: uppercase;
+    border-radius: 5px;
+    transition: all var(--transition-speed) ease;
+    cursor: pointer;
+    border: 2px solid transparent;
+    text-align: center;
+}
+
+.btn-primary {
+    background-color: var(--dtx-red);
+    color: var(--white);
+    border-color: var(--dtx-red);
+}
+
+.btn-primary:hover {
+    background-color: #a00829;
+    border-color: #a00829;
+    color: var(--white);
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-white {
+    color: var(--white) !important;
+}
+
+/* --- 4. HEADER --- */
+.header {
+    background-color: var(--white);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+/* Top Bar */
+.top-bar {
+    background-color: var(--dtx-blue);
+    color: var(--white);
+    padding: 8px 0;
+    font-size: 0.9rem;
+}
+
+.top-bar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.top-bar-contact span {
+    margin-right: 20px;
+}
+
+.top-bar-contact i {
+    margin-right: 5px;
+    color: var(--dtx-red);
+}
+
+.top-bar-socials a {
+    color: var(--white);
+    margin-left: 15px;
+    font-size: 1.1rem;
+}
+
+.top-bar-socials a:hover {
+    color: var(--dtx-red);
+}
+
+/* Main Header */
+.main-header {
+    padding: 15px 0;
+}
+
+.main-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: 900;
+    color: var(--dtx-blue);
+}
+
+.logo span {
+    color: var(--dtx-red);
+}
+
+.main-nav ul {
+    display: flex;
+    align-items: center;
+}
+
+.main-nav li {
+    margin-left: 25px;
+}
+
+.main-nav a {
+    color: var(--dtx-blue);
+    font-weight: 700;
+    padding: 5px 0;
+    border-bottom: 2px solid transparent;
+}
+
+.main-nav a:hover, .main-nav a.active {
+    color: var(--dtx-red);
+    border-bottom-color: var(--dtx-red);
+}
+
+.header-cta {
+    margin-left: 30px;
+}
+
+/* Mobile Menu */
+.menu-toggle {
+    display: none;
+    font-size: 1.8rem;
+    color: var(--dtx-blue);
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+/* --- 5. FOOTER --- */
+.footer {
+    background-color: var(--dtx-blue);
+    color: var(--white);
+    padding: 60px 0 0;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.footer-col h4 {
+    color: var(--white);
+    font-weight: 700;
+    margin-bottom: 20px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.footer-col h4::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 50px;
+    height: 2px;
+    background-color: var(--dtx-red);
+}
+
+.footer-col p, .footer-col li {
+    font-size: 0.95rem;
+    margin-bottom: 10px;
+    color: rgba(255,255,255,0.8);
+}
+
+.footer-col .logo {
+    color: var(--white);
+    margin-bottom: 15px;
+}
+
+.footer-nav a {
+    color: rgba(255,255,255,0.8);
+    display: block;
+    margin-bottom: 10px;
+}
+
+.footer-nav a:hover {
+    color: var(--white);
+}
+
+.footer-contact i {
+    margin-right: 10px;
+    width: 20px;
+    text-align: center;
+}
+
+.footer-socials {
+    margin-top: 20px;
+}
+
+.footer-socials a {
+    color: var(--white);
+    font-size: 1.5rem;
+    margin-right: 15px;
+}
+
+.footer-socials a:hover {
+    color: var(--dtx-red);
+}
+
+.sub-footer {
+    background-color: #001f54;
+    padding: 20px 0;
+    text-align: center;
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.6);
+}
+
+.sub-footer a {
+    color: rgba(255,255,255,0.6);
+    text-decoration: underline;
+}
+
+.sub-footer a:hover {
+    color: var(--white);
+}
+
+/* --- 6. HOMEPAGE SECTIONS --- */
+
+/* Section 1: Hero/Safety */
+.hero-section {
+    background: url('https://via.placeholder.com/1920x1080/cccccc/212529?text=Pristine+Job+Site+Background') no-repeat center center/cover;
+    color: var(--white);
+    padding: 120px 0;
+    position: relative;
+    text-align: center;
+}
+
+.hero-section::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.hero-content h1 {
+    color: var(--dtx-blue);
+}
+
+.hero-content .sub-headline {
+    font-size: 1.25rem;
+    margin-bottom: 30px;
+    color: var(--dark-grey);
+}
+
+.trust-bar {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin: 40px 0;
+    flex-wrap: wrap;
+}
+
+.trust-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: var(--dark-grey);
+}
+
+.trust-item i {
+    font-size: 2.5rem;
+    color: var(--dtx-blue);
+    margin-bottom: 10px;
+}
+
+.trust-item span {
+    font-weight: 700;
+}
+
+/* Section 2: Social Connection */
+.social-section .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+}
+
+.testimonial {
+    margin-top: 30px;
+    padding-left: 20px;
+    border-left: 3px solid var(--dtx-red);
+    font-style: italic;
+}
+
+.testimonial-author {
+    font-weight: 700;
+    font-style: normal;
+    margin-top: 10px;
+    display: block;
+}
+
+.stars {
+    color: #f39c12;
+    margin-top: 5px;
+}
+
+.photo-collage {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.photo-collage img {
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.social-cta {
+    grid-column: 1 / -1;
+    text-align: center;
+    margin-top: 40px;
+}
+
+/* Section 3: Status */
+.status-section {
+    background-color: var(--light-grey-bg);
+    text-align: center;
+}
+
+.status-gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 40px;
+}
+
+.status-gallery img {
+    border-radius: 8px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+    transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+}
+
+.status-gallery img:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+/* Section 4: Autonomy */
+.autonomy-section .container {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 50px;
+    align-items: center;
+}
+
+.infographic {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.infographic-step {
+    display: flex;
+    align-items: center;
+    background: var(--light-grey-bg);
+    padding: 20px;
+    border-radius: 8px;
+    border-left: 5px solid var(--dtx-blue);
+}
+
+.infographic-step i {
+    font-size: 2.5rem;
+    color: var(--dtx-red);
+    margin-right: 20px;
+    min-width: 50px;
+    text-align: center;
+}
+
+.infographic-step h4 {
+    margin: 0;
+    color: var(--dtx-blue);
+    font-size: 1.2rem;
+}
+
+.autonomy-cta {
+    grid-column: 1 / -1;
+    text-align: center;
+    margin-top: 40px;
+}
+
+/* Section 5: Meaning */
+.meaning-section {
+    background: url('https://via.placeholder.com/1920x1080/cccccc/212529?text=Family+Laughing+in+New+Kitchen') no-repeat center center/cover;
+    position: relative;
+    color: var(--white);
+}
+
+.meaning-section .overlay {
+    background-color: rgba(0, 39, 104, 0.8); /* DTX Blue with transparency */
+    padding: 80px 0;
+}
+
+.meaning-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.meaning-content h2, .meaning-content .sub-headline, .meaning-content .testimonial {
+    color: var(--white);
+}
+
+.meaning-content .testimonial {
+    border-left-color: var(--dtx-red);
+    background: rgba(255,255,255,0.1);
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 30px;
+}
+
+/* Section 6: Expertise */
+.expertise-section .container {
+    text-align: center;
+}
+
+.expertise-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    margin-top: 40px;
+    text-align: left;
+}
+
+.expertise-col {
+    padding: 30px;
+    background: var(--light-grey-bg);
+    border-radius: 8px;
+}
+
+.expertise-col h3 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.stat-item {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.stat-item .number {
+    font-size: 3.5rem;
+    font-weight: 900;
+    color: var(--dtx-red);
+    line-height: 1;
+}
+
+.stat-item .text {
+    font-weight: 500;
+    color: var(--dark-grey);
+}
+
+.affiliation-logos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.affiliation-logos img {
+    max-width: 150px;
+    filter: grayscale(100%);
+    opacity: 0.7;
+    transition: all var(--transition-speed) ease;
+}
+
+.affiliation-logos img:hover {
+    filter: grayscale(0%);
+    opacity: 1;
+}
+
+.guide-visual img {
+    border: 5px solid var(--white);
+    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+    margin: 0 auto 20px auto;
+}
+
+.expertise-cta {
+    margin-top: 50px;
+}
+
+/* --- 7. RESPONSIVE DESIGN --- */
+@media (max-width: 992px) {
+    h1 { font-size: 2.8rem; }
+    h2 { font-size: 2.2rem; }
+
+    /* Header */
+    .main-nav {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: var(--white);
+        box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+        flex-direction: column;
+        align-items: stretch;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.5s ease-in-out;
+    }
+
+    .main-nav ul {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px 0;
+    }
+
+    .main-nav li {
+        width: 100%;
+        margin: 0;
+    }
+
+    .main-nav a {
+        display: block;
+        padding: 15px 20px;
+        border-bottom: 1px solid #eee;
+    }
+    
+    .main-nav a:hover, .main-nav a.active {
+        border-bottom-color: #eee;
+        background-color: var(--light-grey-bg);
+    }
+
+    .main-nav.active {
+        max-height: 500px; /* Adjust as needed */
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .header-cta {
+        display: none; /* Hide header CTA on tablet, can be moved into menu if needed */
+    }
+
+    /* Homepage Sections */
+    .social-section .container,
+    .autonomy-section .container {
+        grid-template-columns: 1fr;
+    }
+
+    .autonomy-section .infographic {
+        margin-bottom: 30px;
+    }
+
+    .status-gallery,
+    .expertise-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    section {
+        padding: 60px 0;
+    }
+
+    h1 { font-size: 2.2rem; }
+    h2 { font-size: 1.8rem; }
+
+    /* Header */
+    .top-bar .container {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .top-bar-contact span {
+        display: block;
+        text-align: center;
+        margin: 5px 0;
+    }
+
+    /* Footer */
+    .footer-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .footer-col h4::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
